@@ -31,8 +31,9 @@ function afficheEcran(){
 
 function afficheLettres(){
     screen.textContent += this.value; //Pour afficher les lettres//
+    console.log(this.value);
     if (this.value==randomWord){
-        for (let j=0; j<randowWord.lenght; j++){ //Une boucle pour que le pendu s'affiche au fur et à mesure que l'on donne la bonne lettre//
+        for (let j=0; j<randowWord.length; j++){ //Une boucle pour que le pendu s'affiche au fur et à mesure que l'on donne la bonne lettre//
             hanged[j].style.visibility="visible";
         }
     }else{
@@ -46,7 +47,8 @@ function afficheResultat(){
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
-let randomWord = String.prototype.word; //undefined//
+let randomNumber = Math.floor(Math.random() * word.length);
+let randomWord = word[randomNumber];
 
 let result = document.getElementById('result');
 result.addEventListener("click", afficheResultat);
