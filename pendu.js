@@ -44,6 +44,7 @@ function afficheLettres(){
 
 function afficheResultat(){
     result.textContent += randomWord;
+    console.log(randomWord)
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
