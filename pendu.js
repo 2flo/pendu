@@ -32,7 +32,7 @@ function afficheEcran(){
 function afficheLettres(){
     screen.textContent += this.value; //Pour afficher les lettres//
     console.log(this.value);
-    if (this.value==randomWord){
+    if (this.value==this.randomWord){
         for (let j=0; j<randowWord.length; j++){ //Une boucle pour que le pendu s'affiche au fur et à mesure que l'on donne la bonne lettre//
             hanged[j].style.visibility="visible";
         }
@@ -43,7 +43,9 @@ function afficheLettres(){
 }
 
 function afficheResultat(){
-    result.textContent += randomWord;
+    if (result === randomWord){
+        result.textContent += randomWord;
+    }
     console.log(randomWord)
 }
 
