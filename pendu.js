@@ -20,37 +20,36 @@ ctx.moveTo(280, 200);
 ctx.lineTo(300, 180);
 ctx.lineTo(320, 200); //bras du pendu//
 ctx.stroke();
-let hanged = canvas;
 
 function afficheEcran(){
     let screen = document.getElementById('screen'); //on prend l'id screen pour qu'au cliquage du bouton play, l'écran s'affiche//
     screen.style.visibility="visible";
     screen.style.backgroundColor="#33ffca";
-    hanged.style.visibility="hidden";
+    canvas.style.visibility="hidden";
 }
 
 function afficheLettres(){
+    let screen= document.getElementById('screen');
     screen.textContent += this.value; //Pour afficher les lettres//
-    console.log(this.value);
-    if (this.value==this.randomWord){
-        for (let j=0; j<randowWord.length; j++){ //Une boucle pour que le pendu s'affiche au fur et à mesure que l'on donne la bonne lettre//
-            hanged[j].style.visibility="visible";
+    if (this.value===this.randomWord){
+        for (let j=0; j<canvas.length; j++){ //Une boucle pour que le pendu s'affiche au fur et à mesure que l'on donne la bonne lettre//
+            canvas[j].style.visibility="visible";
         }
     }else{
         screen.textContent = "";
-        alert('Nope');
     }
 }
 
 function afficheResultat(){
-    if (result === randomWord){
+    if ( this.value===true ){
         result.textContent += randomWord;
+    }else{
+        alert("T'es mort!");
     }
-    console.log(randomWord)
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
-let randomNumber = Math.floor(Math.random() * word.length);
+let randomNumber = Math.floor(Math.random() * 10);
 let randomWord = word[randomNumber];
 
 let result = document.getElementById('result');
