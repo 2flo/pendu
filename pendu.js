@@ -31,29 +31,16 @@ function afficheEcran(){
 function afficheLettres(){
     let screen= document.getElementById('screen');
     screen.textContent += this.value; //Pour afficher les lettres//
-    if (this.value===this.randomWord){
-        for (let j=0; j<canvas.length; j++){ //Une boucle pour que le pendu s'affiche au fur et à mesure que l'on donne la bonne lettre//
-            canvas[j].style.visibility="visible";
-        }
-    }else{
-        screen.textContent = "";
-    }
 }
 
 function afficheResultat(){
-    if ( this.value===true ){
-        result.textContent += randomWord;
-    }else{
-        alert("T'es mort!");
-    }
+    result.textContent += randomWord;
+    let result = document.getElementById('result');
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
 let randomNumber = Math.floor(Math.random() * 10);
 let randomWord = word[randomNumber];
-
-let result = document.getElementById('result');
-result.addEventListener("click", afficheResultat);
 
 let play = document.getElementById('play');
 play.addEventListener("click", afficheEcran);
@@ -61,4 +48,8 @@ play.addEventListener("click", afficheEcran);
 let button = document.getElementsByClassName('button');
 for (let i=0; i<word.length; i++){
     button[i].addEventListener("click", afficheLettres);
+}
+
+if (this.value !== randomWord){
+    screen.textContent="";
 }
