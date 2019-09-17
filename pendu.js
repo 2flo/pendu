@@ -34,8 +34,8 @@ function afficheLettres(){
 }
 
 function afficheResultat(){
-    result.textContent += randomWord;
     let result = document.getElementById('result');
+    result.textContent += randomWord;
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
