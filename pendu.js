@@ -39,17 +39,21 @@ function afficheResultat(){
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
-let randomNumber = Math.floor(Math.random() * 10);
+let randomNumber = Math.floor(Math.random() * word.length);
 let randomWord = word[randomNumber];
 
 let play = document.getElementById('play');
-play.addEventListener("click", afficheEcran);
+play.addEventListener("click", afficheEcran); //On affiche l'écran où les lettres vont prendre vie
 
 let button = document.getElementsByClassName('button');
 for (let i=0; i<word.length; i++){
-    button[i].addEventListener("click", afficheLettres);
+    button[i].addEventListener("click", afficheLettres); //A l'appui des boutons, les lettres s'afficheront
 }
 
-if (this.value !== randomWord){
-    screen.textContent="";
+if (this.value !== randomWord.indexOf()){
+    screen.textContent=""; //Cette fonction pour que les lettres ne correspondant pas au mot recherché ne s'affichent pas
+}else if (this.value === randomWord.indexOf()){
+    for (let j=0, j<ctx.length; j++){
+        
+    }
 }
