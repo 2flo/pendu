@@ -50,9 +50,9 @@ for (let i=0; i<button.length; i++){
     button[i].addEventListener("click", afficheLettres); //A l'appui des boutons, les lettres s'afficheront
 }
 
-if (this.value !== randomWord.indexOf()){
+if (this.value !== randomWord.indexOf(word)){
     screen.textContent=""; //Cette fonction pour que les lettres ne correspondant pas au mot recherché ne s'affichent pas
-}else if (this.value === randomWord.indexOf()){
+}else if (this.value === randomWord.indexOf(word)){
     for (let j=0; j<canvas.length; j++){
         canvas[j].style.visibility="visible";
         afficheResultat();
