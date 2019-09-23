@@ -25,7 +25,7 @@ function afficheEcran(){
     let screen = document.getElementById('screen'); //on prend l'id screen pour qu'au cliquage du bouton play, l'écran s'affiche//
     screen.style.visibility="visible";
     screen.style.backgroundColor="#33ffca";
-    canvas.style.visibility="hidden";
+    ctx.strokeStyle="hidden";
 }
 
 function afficheLettres(){
@@ -35,12 +35,16 @@ function afficheLettres(){
 
 function afficheResultat(){
     let result = document.getElementById('result');
-    result.textContent += randomWord;
+    for (let k=0; k<randomWord.lenght; k++){
+        result[k].textContent += "-";
+          
+    }
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
 let randomNumber = Math.floor(Math.random() * word.length);
 let randomWord = word[randomNumber];
+let count = 0;
 
 let play = document.getElementById('play');
 play.addEventListener("click", afficheEcran); //On affiche l'écran où les lettres vont prendre vie
@@ -54,7 +58,7 @@ if (this.value !== randomWord.indexOf(word)){
     screen.textContent=""; //Cette fonction pour que les lettres ne correspondant pas au mot recherché ne s'affichent pas
 }else if (this.value === randomWord.indexOf(word)){
     for (let j=0; j<canvas.length; j++){
-        canvas[j].style.visibility="visible";
+        ctx[j].strokeStyle="visible";
         afficheResultat();
     }
 }
