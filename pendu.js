@@ -31,14 +31,14 @@ function afficheEcran(){
 function afficheLettres(){
     let screen= document.getElementById('screen');
     screen.textContent += this.value; //Pour afficher les lettres//
+    for (let k=0; k<randomWord.length; k++){
+        result[k].textContent += "-";
+    }
 }
 
 function afficheResultat(){
     let result = document.getElementById('result');
-    for (let k=0; k<randomWord.lenght; k++){
-        result[k].textContent += "-";
-          
-    }
+    result.textContent += randomWord;
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
