@@ -33,7 +33,7 @@ canvas{
     top: 100px;
 }
 
-.screen{
+#screen{
     border: 1px solid black;
     width: 200px;
     height: 90px;
@@ -41,14 +41,5 @@ canvas{
     left: 45px;
     bottom: 500px;
     visibility: hidden;
-}
-
-.result{
-    border: 1px solid black;
-    width: 200px;
-    height: 90px;
-    position: relative;
-    left: 1100px;
-    bottom: 500px;
-    background-color: rgb(54, 230, 54);
+    letter-spacing: 10px;
 }
