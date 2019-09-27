@@ -25,26 +25,22 @@ function afficheEcran(){
     let screen = document.getElementById('screen'); //on prend l'id screen pour qu'au cliquage du bouton play, l'écran s'affiche//
     screen.style.visibility="visible";
     screen.style.backgroundColor="#33ffca";
-    ctx.strokeStyle="hidden";
 }
 
 function afficheLettres(){
     let screen= document.getElementById('screen');
-    screen.textContent += this.value; //Pour afficher les lettres//
-    for (let k=0; k<randomWord.length; k++){
-        result[k].textContent += "-";
-    }
+    screen.textContent += "-"; //Pour afficher les lettres//
 }
 
 function afficheResultat(){
     let result = document.getElementById('result');
     result.textContent += randomWord;
+    screen.textContent += this.value;
 }
 
 let word = ['javascript', 'python', 'symfony', 'ruby', 'bootstrap', 'wordpress', 'debian', 'sass', 'github', 'vuejs'];
 let randomNumber = Math.floor(Math.random() * word.length);
-let randomWord = word[randomNumber];
-let count = 0;
+let randomWord = word[randomNumber]; //pour générer un mot aléatoire//
 
 let play = document.getElementById('play');
 play.addEventListener("click", afficheEcran); //On affiche l'écran où les lettres vont prendre vie
@@ -54,11 +50,10 @@ for (let i=0; i<button.length; i++){
     button[i].addEventListener("click", afficheLettres); //A l'appui des boutons, les lettres s'afficheront
 }
 
-if (this.value !== randomWord.indexOf(word)){
-    screen.textContent=""; //Cette fonction pour que les lettres ne correspondant pas au mot recherché ne s'affichent pas
-}else if (this.value === randomWord.indexOf(word)){
-    for (let j=0; j<canvas.length; j++){
-        ctx[j].strokeStyle="visible";
+if (this.value !== randomWord.split(word)){
+    screen.textContent += ""; //Cette fonction pour que les lettres ne correspondant pas au mot recherché ne s'affichent pas
+}else if (this.value === randomWord.split(word)){
+    for (let j=0; j<ctx.length; j++){
         afficheResultat();
     }
 }
