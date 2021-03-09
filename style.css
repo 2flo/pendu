@@ -1,0 +1,45 @@
+#hanged{
+    border: 1px solid red;
+    background-color: aqua;
+}
+
+button{
+    position: relative;
+    bottom: 350px;
+    left: 10px;
+}
+
+canvas{
+    position: relative;
+    top: 100px;
+    left: 368px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box{
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.button{
+    position: relative;
+    top: 100px;
+}
+
+#screen{
+    border: 1px solid black;
+    width: 200px;
+    height: 90px;
+    position: relative;
+    left: 45px;
+    bottom: 500px;
+    visibility: hidden;
+    letter-spacing: 10px;
+}
